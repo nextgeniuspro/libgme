@@ -62,20 +62,19 @@ How to build for Dreamcast
 
 1. Generate the makefiles with CMake
 
-cmake -S . -B build -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=${KOS_CMAKE_TOOLCHAIN} -DOS_KOS:STRING=1
-
+    cmake -S . -B build -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=${KOS_CMAKE_TOOLCHAIN} -DOS_KOS:STRING=1
 
 2. Build the library
 
-cmake --build build -j8
+    cmake --build build -j8
 
 3. Build the demo application
 
-cmake --build build --target demodc -j8
+    cmake --build build --target demodc -j8
 
 4. Run the demo application
 
-Flycast build/demodc/demo.elf
+    Flycast build/demodc/demo.elf
 
 
 
