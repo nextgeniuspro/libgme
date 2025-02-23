@@ -70,7 +70,7 @@ How to build for Dreamcast
 
 3. Build the demo application
 
-    cmake --build build --target demodc -j8
+    cmake --build build --target demo -j8
 
 4. Run the demo application
 
