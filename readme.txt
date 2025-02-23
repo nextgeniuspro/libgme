@@ -58,6 +58,27 @@ Read gme.txt for more information. Post to the discussion forum for
 assistance.
 
 
+How to build for Dreamcast
+
+1. Generate the makefiles with CMake
+
+cmake -S . -B build -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=${KOS_CMAKE_TOOLCHAIN} -DOS_KOS:STRING=1
+
+
+2. Build the library
+
+cmake --build build -j8
+
+3. Build the demo application
+
+cmake --build build --target demodc -j8
+
+4. Run the demo application
+
+Flycast build/demodc/demo.elf
+
+
+
 Files
 -----
 gme.txt               General notes about the library
@@ -74,6 +95,11 @@ demo/
   features.c          Demonstrates many additional features
   Wave_Writer.h       WAVE sound file writer used for demo output
   Wave_Writer.cpp
+  CMakeLists.txt      CMake build rules
+
+demodc/
+  example.c           Dreamcast demo application
+  romdisk/            Directory containing files to be added to romdisk
   CMakeLists.txt      CMake build rules
 
 player/               Player using the SDL multimedia library
